@@ -1,0 +1,27 @@
+{
+  "name": "costco_tire_sniper",
+  "version": "1.0.0",
+  "description": "a program to snipe tires on costco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivabalansm/costco_tire_sniper.git"
+  },
+  "keywords": [
+    "selenium",
+    "js",
+    "costco"
+  ],
+  "author": "sivabalansm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sivabalansm/costco_tire_sniper/issues"
+  },
+  "homepage": "https://github.com/sivabalansm/costco_tire_sniper#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.25.0"
+  }
+}

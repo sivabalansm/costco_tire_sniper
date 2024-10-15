@@ -1,28 +1,28 @@
 const utils = require('./utils.js');
 const firefox = require('selenium-webdriver/firefox');
-const { Builder } = require('selenium-webdriver');
+const { Builder, Browser } = require('selenium-webdriver');
 
 class WebWatchDog {
 	#checkInterval = 0;
 	#headless = false;
 
-	constructor(url, interval = 30, headless = false) {
-		this.setInterval(interval);
-		this.setHeadless(headless);
+	constructor(interval = 30, headless = false) {
+		this.setCheckInterval = interval;
+		this.setHeadless = headless;
 	}
 
 	set setHeadless(isHeadless) {
 		this.#headless = isHeadless;
 	}
 
-	set setInterval(time) {
+	set setCheckInterval(time) {
 		this.#checkInterval = time * 1000;
 	}
 
 
 	async initDriver() {
 		let driver = await new Builder()
-			.forBrowser(Broswser.FIREFOX)
+			.forBrowser(Browser.FIREFOX)
 			.build();
 		return driver;
 	}
@@ -37,7 +37,7 @@ class WebWatchDog {
 
 	async run() {
 		let driver = await this.initDriver();
-		await navigate(driver);
+		await this.navigate(driver);
 
 		while(true) {
 			await this.watch(driver);
